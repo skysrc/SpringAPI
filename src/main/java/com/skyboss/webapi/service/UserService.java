@@ -14,4 +14,7 @@ import com.skyboss.webapi.model.SBUser;
  */
 public interface UserService {
     List<SBUser> userList();
+    SBUser findOne(Long id);
+    SBUser addUser(SBUser user);
+    String deleteUser(Long id);
 }

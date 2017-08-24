@@ -31,4 +31,20 @@ public class UserServiceImpl implements UserService{
     public List<SBUser> userList() {
         return userRepository.findAll();
     }
+
+    @Override
+    public SBUser findOne(Long id) {
+        return userRepository.findOne(id);
+    }
+
+    @Override
+    public SBUser addUser(SBUser user) {
+        return userRepository.save(user);
+    }
+
+    @Override
+    public String deleteUser(Long id) {
+        userRepository.delete(id);
+        return "{'message' : 'User deleted.'}";
+    }
 }
